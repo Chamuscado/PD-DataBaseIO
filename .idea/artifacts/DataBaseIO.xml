@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DataBaseIO">
+    <output-path>$PROJECT_DIR$/Jar</output-path>
+    <root id="archive" name="DataBaseIO.jar">
+      <element id="module-output" name="DataBaseIO" />
+    </root>
+  </artifact>
+</component>
