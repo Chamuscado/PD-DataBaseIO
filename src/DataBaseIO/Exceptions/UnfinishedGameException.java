@@ -1,4 +1,4 @@
-package Exceptions;
+package DataBaseIO.Exceptions;
 
 public class UnfinishedGameException extends Throwable {
     public UnfinishedGameException(String s) {

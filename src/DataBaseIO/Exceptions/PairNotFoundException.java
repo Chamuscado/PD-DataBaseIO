@@ -1,4 +1,4 @@
-package Exceptions;
+package DataBaseIO.Exceptions;
 
 public class PairNotFoundException extends Throwable {
     public PairNotFoundException(String user1, String user2) {

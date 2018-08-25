@@ -1,8 +1,8 @@
-package Elements;
+package DataBaseIO.Elements;
 
 import java.io.Serializable;
 
-public class Player implements Serializable {
+public class PlayerDatabase implements Serializable {
     public static final int INVALIDID = -1;
     static final long serialVersionUID = 1;
     private int id;
@@ -13,26 +13,41 @@ public class Player implements Serializable {
     private boolean logado;
     private String ip;
     private int porto;
+    private int wins;
+    private int defeats;
 
-    public Player(String user, String pass,String ip, int porto) {
-        this(INVALIDID,null, user, pass,false,false,ip,porto);
+    public int getWins() {
+        return wins;
     }
 
-    public Player(String name, String user, String pass) {
+    public int getDefeats() {
+        return defeats;
+    }
+
+    public PlayerDatabase(String user, String pass, String ip, int porto) {
+        this(INVALIDID, null, user, pass, false, false, ip, porto);
+    }
+
+    public PlayerDatabase(String name, String user, String pass) {
         this(INVALIDID, name, user, pass, false);
     }
 
-    public Player(int id, String name, String user, String pass, boolean logado) {
+    public PlayerDatabase(int id, String name, String user, String pass, boolean logado) {
         this(id, name, user, pass, false, false);
     }
 
-    public Player(int id, String name, String user, String pass, boolean logado, boolean bd,
-                  String ip, int porto) {
+    public PlayerDatabase(int id, String name, String user, String pass, boolean logado, boolean bd,
+                          String ip, int porto) {
         this(id, name, user, pass, logado, bd, ip, porto, INVALIDID);
     }
 
-    public Player(int id, String name, String user, String pass, boolean logado, boolean bd,
-                  String ip, int porto, int idPar) {
+    public PlayerDatabase(int id, String name, String user, String pass, boolean logado, boolean bd,
+                          String ip, int porto, int idPar) {
+        this(id, name, user, pass, logado, bd, ip, porto, idPar, 0, 0);
+    }
+
+    public PlayerDatabase(int id, String name, String user, String pass, boolean logado, boolean bd,
+                          String ip, int porto, int idPar, int wins, int defeats) {
         this.id = id;
         this.name = name;
         this.user = user;
@@ -44,9 +59,11 @@ public class Player implements Serializable {
         this.ip = ip;
         this.porto = porto;
         this.idPar = idPar;
+        this.wins = wins;
+        this.defeats = defeats;
     }
 
-    public Player(int id, String name, String user, String pass, boolean logado, boolean bd) {
+    public PlayerDatabase(int id, String name, String user, String pass, boolean logado, boolean bd) {
         this(id, name, user, pass, logado, bd, "", -1);
     }
 
