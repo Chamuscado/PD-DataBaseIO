@@ -131,7 +131,7 @@ public class DataBaseIO {
     }
 
     public PlayerDatabase getPlayer(String user) throws UserNotFoundException {
-        String sql = "SELECT * FROM " + PLAYERSTABLE + " WHERE " + PLAYERSELMENTS[2] + " = '" + user + "';";
+        String sql = "SELECT * FROM " + PLAYERSTABLE + " WHERE BINARY " + PLAYERSELMENTS[2] + " = '" + user + "';";
         return internalgetPlayer(sql, user);
     }
 
